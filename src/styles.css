@@ -9,7 +9,12 @@ html {
 }
 
 .slider {
+  display: grid;
   overflow: hidden;
+}
+
+.slider > * {
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .img-container {
@@ -24,6 +29,10 @@ html {
   animation: slide_animation 3.5s ease-in-out infinite;
 }
 
+#second-img-container {
+  animation-delay: 2.85s;
+}
+
 img {
   max-height: 90%;
   max-width: 90%;
@@ -33,18 +42,18 @@ img {
   0% {
     right: -100%;
   }
-  15% {
+  12.5% {
     opacity: 0;
   }
-  30% {
+  25% {
     right: 0;
     opacity: 1;
   }
-  70% {
+  75% {
     right: 0;
     opacity: 1;
   }
-  85% {
+  87.5% {
     opacity: 0;
   }
   100% {
