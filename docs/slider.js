@@ -46,8 +46,8 @@ function setImage(isFirstContainer) {
   setIndex();
   let image = document.createElement("img");
   if (imagePaths[imageIndex]) {
-    if (window.location.hostname.includes("https://h1tran.github.io/Slideshow")) imageSource = window.location.hostname + imagePaths[imageIndex];
-    else imageSource = imagePaths[imageIndex];
+    if (window.location.hostname.includes("h1tran.github.io")) imageSource = window.location.hostname + "/Slideshow/" + imagePaths[imageIndex];
+    else imageSource = "../" + imagePaths[imageIndex];
   }
   if (imageSource) image.src = imageSource;
 
