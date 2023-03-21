@@ -16,9 +16,6 @@ const fetchData = async () => {
 init();
 
 function init() {
-  let isFirstPaused = false;
-  let isSecondPaused = false;
-
   resolveData = async () => {
     await fetchData().then(data => {
       for (filePath in data.tree) {
@@ -33,23 +30,11 @@ function init() {
     setImage(false);
 
     firstContainer.addEventListener("animationiteration", function () {
-      firstContainer.style.animationPlayState = "paused";
-      isFirstPaused = true;
+      setImage(true);
     });
     secondContainer.addEventListener("animationiteration", function () {
-      secondContainer.style.animationPlayState = "paused";
-      isSecondPaused = true;
+      setImage(false);
     });
-
-    // Timing function
-    window.setInterval(() => {
-      if (isFirstPaused && isSecondPaused) {
-        setImage(true);
-        setImage(false);
-        isFirstPaused = false;
-        isSecondPaused = false;
-      }
-    }, 800);
   }
 
   // Wait for fetched data to resolve first
@@ -73,10 +58,9 @@ function setImage(isFirstContainer) {
 }
 
 function setIndex() {
-  // Type guard
-  if (imageIndex < imagePaths.length - 1) {
-    imageIndex++;
+  if (imageIndex > imagePaths.length - 2) {
+    imageIndex = 0;
     return;
   }
-  imageIndex = 0;
+  imageIndex++;
 }
