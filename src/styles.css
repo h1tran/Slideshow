@@ -1,0 +1,47 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  right: -100%;
+  opacity: 0;
+
+  animation: slide_animation 3.5s ease-in-out infinite;
+}
+
+@keyframes slide_animation {
+  0% {
+    right: -100%;
+  }
+  10% {
+    opacity: 0;
+  }
+  25% {
+    right: 0;
+    opacity: 1;
+  }
+  75% {
+    right: 0;
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    right: 100%;
+  }
+}
