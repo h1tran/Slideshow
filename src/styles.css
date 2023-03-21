@@ -15,6 +15,7 @@ html {
 .img-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   position: relative;
   right: -100%;
@@ -23,22 +24,27 @@ html {
   animation: slide_animation 3.5s ease-in-out infinite;
 }
 
+img {
+  max-height: 90%;
+  max-width: 90%;
+}
+
 @keyframes slide_animation {
   0% {
     right: -100%;
   }
-  10% {
+  15% {
     opacity: 0;
   }
-  25% {
+  30% {
     right: 0;
     opacity: 1;
   }
-  75% {
+  70% {
     right: 0;
     opacity: 1;
   }
-  90% {
+  85% {
     opacity: 0;
   }
   100% {
