@@ -1,11 +1,9 @@
-var URL = "https://api.github.com/repos/h1tran/Kii-Slideshow/git/trees/master?recursive=1"
+var URL = "https://api.github.com/repos/h1tran/Slideshow/git/trees/master?recursive=1"
 var imagePaths = [];
 var imageContainer = document.getElementById("img-container");
 var image = document.getElementById("img");
 var imageIndex = 0;
 var imageSource;
-
-var imageLeftSet = true;
 
 // Make sure that everything is rendered before wasting API calls
 if (imageContainer && image) {
