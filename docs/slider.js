@@ -45,7 +45,7 @@ function setImage(isFirstContainer) {
   if (!firstContainer || !secondContainer) return;
   setIndex();
   let image = document.createElement("img");
-  if (imagePaths[imageIndex]) imageSource = "../" + imagePaths[imageIndex];
+  if (imagePaths[imageIndex]) imageSource = "./" + imagePaths[imageIndex];
   if (imageSource) image.src = imageSource;
 
   if (isFirstContainer) {
