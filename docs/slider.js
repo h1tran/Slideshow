@@ -45,7 +45,10 @@ function setImage(isFirstContainer) {
   if (!firstContainer || !secondContainer) return;
   setIndex();
   let image = document.createElement("img");
-  if (imagePaths[imageIndex]) imageSource = imagePaths[imageIndex];
+  if (imagePaths[imageIndex]) {
+    if (window.location.hostname.includes("https://h1tran.github.io/Slideshow")) imageSource = window.location.hostname + imagePaths[imageIndex];
+    else imageSource = imagePaths[imageIndex];
+  }
   if (imageSource) image.src = imageSource;
 
   if (isFirstContainer) {
