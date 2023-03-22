@@ -40,7 +40,7 @@ function init() {
       if (secondContainer.getBoundingClientRect().right < window.innerWidth) {
         firstContainer.style.animationPlayState = "running";
       }
-    }, 100);
+    }, 500);
     secondContainer.style.animation = `slide_animation ${cycleTime}ms ease-in-out infinite`;
     secondContainer.style.animationPlayState = "paused";
 
@@ -51,7 +51,7 @@ function init() {
     secondContainer.addEventListener("animationiteration", function () {
       secondContainer.style.animationPlayState = "paused";
       setImage(false);
-    }, 750);
+    });
   }
 
   // Wait for fetched data to resolve first
