@@ -5,6 +5,8 @@ var secondContainer = document.getElementById("second-img-container");
 var imageIndex = -1;
 var imageSource;
 
+var cycleTime = 4500;
+
 const fetchData = async () => {
   // Type guard
   if (!repoURL) return;
@@ -29,12 +31,27 @@ function init() {
     setImage(true);
     setImage(false);
 
+    firstContainer.style.animation = `slide_animation ${cycleTime}ms ease-in-out infinite`;
+    setInterval(() => {
+      // When starting to move off screen
+      if (firstContainer.getBoundingClientRect().right < window.innerWidth) {
+        secondContainer.style.animationPlayState = "running";
+      }
+      if (secondContainer.getBoundingClientRect().right < window.innerWidth) {
+        firstContainer.style.animationPlayState = "running";
+      }
+    }, 100);
+    secondContainer.style.animation = `slide_animation ${cycleTime}ms ease-in-out infinite`;
+    secondContainer.style.animationPlayState = "paused";
+
     firstContainer.addEventListener("animationiteration", function () {
+      firstContainer.style.animationPlayState = "paused";
       setImage(true);
     });
     secondContainer.addEventListener("animationiteration", function () {
+      secondContainer.style.animationPlayState = "paused";
       setImage(false);
-    });
+    }, 750);
   }
 
   // Wait for fetched data to resolve first
