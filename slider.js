@@ -5,7 +5,7 @@ var secondContainer = document.getElementById("second-img-container");
 var imageIndex = -1;
 var imageSource;
 
-var cycleTime = 4500;
+var cycleTime = 5500;
 
 const fetchData = async () => {
   // Type guard
