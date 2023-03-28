@@ -72,12 +72,12 @@ img {
 
 @keyframes scale_animation {
   0% {
-    scale: 100%;
+    transform: scale(1);
   }
   50% {
-    scale: 110%;
+    transform: scale(1.1);
   }
   100% {
-    scale: 100%;
+    transform: scale(1);
   }
 }
