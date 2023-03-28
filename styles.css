@@ -32,19 +32,19 @@ img {
   opacity: 0;
 }
 
-.diagonal-text {
+.scale-text {
   display: flex;
   position: relative;
-  top: 200px;
+  top: 250px;
   height: 100vh;
   justify-content: center;
   align-items: center;
   z-index: 1;
   color: white;
-  font-size: 128px;
+  font-size: 156px;
   font-family: 'Impact', sans-serif;
   -webkit-text-stroke: 3px black;
-  animation: scale_animation 3000ms ease-in-out infinite;
+  animation: scale_animation 2000ms ease-in-out infinite;
 }
 
 @keyframes slide_animation {
