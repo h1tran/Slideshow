@@ -8,6 +8,11 @@ html {
   height: 100%;
 }
 
+img {
+  max-height: 90%;
+  max-width: 90%;
+}
+
 .slider {
   display: grid;
   overflow: hidden;
@@ -27,9 +32,19 @@ html {
   opacity: 0;
 }
 
-img {
-  max-height: 90%;
-  max-width: 90%;
+.diagonal-text {
+  display: flex;
+  position: relative;
+  top: 200px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  color: white;
+  font-size: 128px;
+  font-family: 'Impact', sans-serif;
+  -webkit-text-stroke: 3px black;
+  animation: scale_animation 3000ms ease-in-out infinite;
 }
 
 @keyframes slide_animation {
@@ -52,5 +67,17 @@ img {
   }
   100% {
     right: 100%;
+  }
+}
+
+@keyframes scale_animation {
+  0% {
+    scale: 100%;
+  }
+  50% {
+    scale: 110%;
+  }
+  100% {
+    scale: 100%;
   }
 }
