@@ -41,9 +41,9 @@ img {
   align-items: center;
   z-index: 1;
   color: white;
-  font-size: 156px;
+  font-size: 172px;
   font-family: 'Impact', sans-serif;
-  -webkit-text-stroke: 3px black;
+  -webkit-text-stroke: 4px black;
   animation: scale_animation 2000ms ease-in-out infinite;
 }
 
@@ -75,7 +75,7 @@ img {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(0.9);
   }
   100% {
     transform: scale(1);
