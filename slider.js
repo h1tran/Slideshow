@@ -31,6 +31,7 @@ function init() {
     setImage(true);
     setImage(false);
 
+    // Nibarder slide animation
     firstContainer.style.animation = `slide_animation ${cycleTime}ms ease-in-out infinite`;
     setInterval(() => {
       // When starting to move off screen
